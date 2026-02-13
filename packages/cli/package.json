@@ -4,7 +4,8 @@
     "description": "CLI for kysely-schema",
     "type": "module",
     "bin": {
-        "kysely-schema": "./dist/index.js"
+        "kysely-schema": "./dist/index.js",
+        "ks": "./dist/index.js"
     },
     "scripts": {
         "build": "tsup",

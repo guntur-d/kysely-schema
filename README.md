@@ -22,6 +22,17 @@ git clone https://github.com/guntur-d/kysely-schema.git
 cd kysely-schema
 pnpm install
 pnpm build
+
+# Link the CLI globally so you can use it anywhere:
+cd packages/cli
+pnpm link --global
+```
+
+Now you can use `kysely-schema` from any project:
+
+```bash
+cd your-project
+kysely-schema init
 ```
 
 Define your schema in `schema/index.ts`:
