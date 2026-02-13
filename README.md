@@ -16,12 +16,12 @@
 ## Quick Start
 
 ```bash
-# Install
-pnpm add -D kysely-schema-cli
-pnpm add kysely-schema
-
-# Initialize
-npx kysely-schema init
+# This package is not yet published to npm.
+# Clone the repo and build locally:
+git clone https://github.com/guntur-d/kysely-schema.git
+cd kysely-schema
+pnpm install
+pnpm build
 ```
 
 Define your schema in `schema/index.ts`:
