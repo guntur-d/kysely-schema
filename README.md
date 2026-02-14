@@ -105,6 +105,14 @@ npx kysely migrate:latest
 - [Migrations](./docs/migrations.md)
 - [API Reference](./docs/api-reference.md)
 
+## Contributing
+
+This project is open source and we welcome contributions!
+
+- 🐛 **Report bugs**: [GitHub Issues](https://github.com/guntur-d/kysely-schema/issues)
+- 💡 **Feature requests**: [GitHub Discussions](https://github.com/guntur-d/kysely-schema/discussions)
+- 🔀 **Pull requests**: [GitHub Repository](https://github.com/guntur-d/kysely-schema)
+
 ## License
 
 MIT
