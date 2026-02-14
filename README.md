@@ -4,6 +4,12 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+## ⚠️ Development Status
+
+This package is in early development and undergoing active testing.
+Expect breaking changes between minor versions. Not recommended for
+production use yet.
+
 ## Features
 
 - 📝 **Schema-first** — Define your database schema in TypeScript
@@ -16,23 +22,15 @@
 ## Quick Start
 
 ```bash
-# This package is not yet published to npm.
-# Clone the repo and build locally:
-git clone https://github.com/guntur-d/kysely-schema.git
-cd kysely-schema
-pnpm install
-pnpm build
+# Install
+npm install -D kysely-schema-cli
+# or
+pnpm add -D kysely-schema-cli
 
-# Link the CLI globally so you can use it anywhere:
-cd packages/cli
-pnpm link --global
-```
-
-Now you can use `kysely-schema` from any project:
-
-```bash
-cd your-project
-kysely-schema init
+# Initialize (installs kysely + db driver for you)
+npx kysely-schema init
+# or
+kys init
 ```
 
 Define your schema in `schema/index.ts`:

@@ -5,7 +5,7 @@
     "type": "module",
     "bin": {
         "kysely-schema": "./dist/index.js",
-        "ks": "./dist/index.js"
+        "kys": "./dist/index.js"
     },
     "scripts": {
         "build": "tsup",
