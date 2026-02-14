@@ -10,6 +10,7 @@ export interface DialectInfo {
     packages: string[];
     dbTemplate: string;
     migrateTemplate: string;
+    envTemplate: string;
 }
 
 const ky = `kysely@${KYSELY_VERSION}`;
@@ -71,6 +72,13 @@ async function migrate() {
 
 migrate();
 `,
+        envTemplate: `# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=mydb
+DB_USER=postgres
+DB_PASSWORD=
+`,
     },
     {
         label: 'MySQL',
@@ -128,6 +136,13 @@ async function migrate() {
 
 migrate();
 `,
+        envTemplate: `# Database Configuration
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=mydb
+DB_USER=root
+DB_PASSWORD=
+`,
     },
     {
         label: 'SQLite',
@@ -178,6 +193,9 @@ async function migrate() {
 }
 
 migrate();
+`,
+        envTemplate: `# Database Configuration
+DB_PATH=app.db
 `,
     },
     {
@@ -253,6 +271,13 @@ async function migrate() {
 }
 
 migrate();
+`,
+        envTemplate: `# Database Configuration
+DB_HOST=localhost
+DB_PORT=1433
+DB_NAME=mydb
+DB_USER=sa
+DB_PASSWORD=
 `,
     },
 ];

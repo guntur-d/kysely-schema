@@ -67,21 +67,25 @@ export async function initCommand(): Promise<void> {
         await fs.mkdir('.kysely-schema', { recursive: true });
         console.log(chalk.green('  ✔'), 'Created .kysely-schema/');
 
-        // ── 4. Generate db.ts + migrate.ts ───────────────────────────
+        // ── 4. Generate db.ts + migrate.ts + .env ────────────────────
         await fs.writeFile('db.ts', dialect.dbTemplate);
         console.log(chalk.green('  ✔'), 'Created db.ts');
 
         await fs.writeFile('migrate.ts', dialect.migrateTemplate);
         console.log(chalk.green('  ✔'), 'Created migrate.ts');
 
+        await fs.writeFile('.env', dialect.envTemplate);
+        console.log(chalk.green('  ✔'), 'Created .env');
+
         // ── Done! ────────────────────────────────────────────────────
         console.log(chalk.green('\n✨ kysely-schema initialized successfully!\n'));
 
         console.log(chalk.dim('Next steps:'));
-        console.log(chalk.dim('  1. Define your schema in schema/index.ts'));
-        console.log(chalk.dim('  2. Run: kys gm "initial"'));
-        console.log(chalk.dim('  3. Run: kys gt'));
-        console.log(chalk.dim('  4. Run: npx tsx migrate.ts'));
+        console.log(chalk.dim('  1. Configure your database in .env'));
+        console.log(chalk.dim('  2. Define your schema in schema/index.ts'));
+        console.log(chalk.dim('  3. Run: kys gm "initial"'));
+        console.log(chalk.dim('  4. Run: kys gt'));
+        console.log(chalk.dim('  5. Run: npx tsx migrate.ts'));
         console.log('');
     } catch (error) {
         console.error(chalk.red('\n✖ Failed to initialize:'), error);

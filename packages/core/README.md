@@ -2,7 +2,8 @@
 
 > Schema-first development tool for Kysely — **Prisma's DX + Kysely's power + Zero runtime overhead**
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/kysely-schema.svg)](https://www.npmjs.com/package/kysely-schema)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/guntur-d/kysely-schema/blob/main/LICENSE)
 
 ## ⚠️ Development Status
 
@@ -24,7 +25,8 @@ production use yet.
 ```bash
 # Install
 npm install -D kysely-schema-cli
-
+# or
+pnpm add -D kysely-schema-cli
 
 # Initialize (installs kysely + db driver for you)
 npx kysely-schema init
@@ -94,19 +96,12 @@ npx kysely migrate:latest
 | Type generation | ✅ | ✅ | ✅ |
 | Runtime overhead | Heavy | None | **None** |
 
-## What It Does NOT Do
-
-- ❌ **Replace** Kysely's migration runner — it generates files for it
-- ❌ **Add runtime overhead** — pure code generation
-- ❌ **Limit SQL capabilities** — generates standard Kysely code
-- ❌ **Introspect databases** — schema-first, not DB-first
-
 ## Documentation
 
-- [Getting Started](./docs/getting-started.md)
-- [Schema Definition](./docs/schema-definition.md)
-- [Migrations](./docs/migrations.md)
-- [API Reference](./docs/api-reference.md)
+- [Getting Started](https://github.com/guntur-d/kysely-schema/blob/main/docs/getting-started.md)
+- [Schema Definition](https://github.com/guntur-d/kysely-schema/blob/main/docs/schema-definition.md)
+- [Migrations](https://github.com/guntur-d/kysely-schema/blob/main/docs/migrations.md)
+- [API Reference](https://github.com/guntur-d/kysely-schema/blob/main/docs/api-reference.md)
 
 ## Contributing
 
@@ -118,4 +113,4 @@ This project is open source and we welcome contributions!
 
 ## License
 
-MIT
+[MIT](https://github.com/guntur-d/kysely-schema/blob/main/LICENSE)
