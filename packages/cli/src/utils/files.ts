@@ -1,5 +1,6 @@
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import type { SchemaDefinition } from 'kysely-schema';
 
 /**
@@ -7,7 +8,8 @@ import type { SchemaDefinition } from 'kysely-schema';
  * The schema file is expected to export a SchemaDefinition as the default.
  */
 export async function loadSchema(schemaPath: string): Promise<SchemaDefinition> {
-    const resolved = path.resolve(schemaPath);
+    const isUrl = schemaPath.startsWith('file://');
+    const resolved = isUrl ? schemaPath : pathToFileURL(path.resolve(schemaPath)).href;
 
     try {
         const mod = await import(resolved);

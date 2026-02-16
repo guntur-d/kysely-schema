@@ -1,6 +1,7 @@
 import * as fs from 'node:fs';
 import * as fsPromises from 'node:fs/promises';
 import * as path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import chalk from 'chalk';
 import {
     TypeGenerator,
@@ -70,7 +71,9 @@ async function runPipeline(config: PipelineConfig): Promise<void> {
         const resolved = path.resolve(config.schemaPath);
         deleteFromModuleCache(resolved);
 
-        schema = await loadSchema(config.schemaPath);
+        // ESM cache busting: append version query param
+        const schemaUrl = pathToFileURL(resolved).href + `?update=${Date.now()}`;
+        schema = await loadSchema(schemaUrl);
     } catch (error: any) {
         console.log(chalk.red('  ✖ Schema load error:'), error.message);
         return;

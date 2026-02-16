@@ -1,5 +1,6 @@
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import type { KyselySchemaConfig } from 'kysely-schema';
 
 const DEFAULT_CONFIG: KyselySchemaConfig = {
@@ -17,7 +18,7 @@ export async function loadConfig(): Promise<KyselySchemaConfig> {
 
     try {
         await fs.access(configPath);
-        const mod = await import(configPath);
+        const mod = await import(pathToFileURL(configPath).href);
         return { ...DEFAULT_CONFIG, ...(mod.default ?? mod) };
     } catch {
         // No config file — use defaults

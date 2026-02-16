@@ -1,6 +1,6 @@
 {
   "name": "kysely-schema-monorepo",
-  "private": true,
+  "private": false,
   "packageManager": "pnpm@8.15.0",
   "scripts": {
     "build": "turbo run build",
